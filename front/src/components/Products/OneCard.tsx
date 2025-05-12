@@ -1,6 +1,6 @@
 import React from "react";
 
-import IProduct from "../../interfaces/index";
+import {IProduct} from "../../interfaces/index";
 import Image from "next/image";
 
 export const OneCard: React.FC<IProduct> = ({name, price, image }) => {

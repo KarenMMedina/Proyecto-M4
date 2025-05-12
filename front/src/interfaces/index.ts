@@ -43,4 +43,7 @@ interface IUser {
     orders: IOrder[];
 }
 
-export default IProduct;
+// export default IProduct;
+export type { IProduct, ICategory, IOrder, IUser };
+export { eRole, eOrderStatus };
+
