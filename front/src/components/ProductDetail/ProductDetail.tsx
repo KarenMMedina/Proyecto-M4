@@ -3,6 +3,10 @@ import React, { FC } from "react";
 import Image from "next/image";
 
 export const ProductDetail: FC<IProduct> = ({ id, name, description, price, stock, image }) => {
+    const getLink = (name: string, id: IProduct["id"]) => {
+        return `/DetailsProducts/${id}/${name}`;
+    };
+
     return (
         <>
             <h3>{id}</h3>
