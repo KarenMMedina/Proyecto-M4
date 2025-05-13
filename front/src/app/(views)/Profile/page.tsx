@@ -52,28 +52,32 @@ export const Profile = () => {
     return (
         <div>
             <h2>Aquí está tu cuenta</h2>
-            <p><strong>Nombre:</strong> {User.name}</p>
-            <p><strong>Email:</strong> {User.email}</p>
-            <p><strong>Dirección:</strong> {User.address}</p>
-            <p><strong>Teléfono:</strong> {User.phone}</p>
-            <p><strong>Rol:</strong> {User.role}</p>
-
+            <div className="max-w-sm bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
+                <p><strong>Nombre:</strong> {User.name}</p>
+                <p><strong>Email:</strong> {User.email}</p>
+                <p><strong>Dirección:</strong> {User.address}</p>
+                <p><strong>Teléfono:</strong> {User.phone}</p>
+                <p><strong>Rol:</strong> {User.role}</p>
+            </div>
+            <br />
             <h3>Órdenes:</h3>
-            {User.orders.map((order) => (
-                <div key={order.id}>
-                    <p><strong>ID de orden:</strong> {order.id}</p>
-                    <p><strong>Fecha:</strong> {order.date}</p>
-                    <p><strong>Estado:</strong> {order.status}</p>
-                    <p><strong>Productos:</strong></p>
-                    <ul>
-                        {order.products.map((product, index) => (
-                            <li key={index}>
-                                {product.name} - ${product.price}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
+            <div className="max-w-sm bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
+                {User.orders.map((order) => (
+                    <div key={order.id}>
+                        <p><strong>ID de orden:</strong> {order.id}</p>
+                        <p><strong>Fecha:</strong> {order.date}</p>
+                        <p><strong>Estado:</strong> {order.status}</p>
+                        <p><strong>Productos:</strong></p>
+                        <ul>
+                            {order.products.map((product, index) => (
+                                <li key={index}>
+                                    {product.name} - ${product.price}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
