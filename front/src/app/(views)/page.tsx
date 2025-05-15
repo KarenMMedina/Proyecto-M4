@@ -1,7 +1,19 @@
 // import Navbar from "@/components/Navbar/Navbar";
 import AllCards from "@/components/Products/AllCards";
+import { getProducts } from "@/services/products";
 
-export default function Home() {
+const getData = async () => {
+	const products = await getProducts();
+	
+	return {
+		products,
+	}
+};
+
+export default async function Home() {
+  const {products} = await getData();
+	console.log ("res", products);
+
   return (
     <>
       {/* <Navbar /> */}

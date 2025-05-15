@@ -1,7 +1,8 @@
 import React from "react";
 import ProductDetail from "@/components/ProductDetail/ProductDetail";
-import listProducts from "@/components/Products/listProducts";
+// import listProducts from "@/components/Products/listProducts";
 import { redirect } from "next/navigation";
+import { getProductById } from "@/services/products";
 
 interface Props {
   params: { slug: string[] };
@@ -12,7 +13,7 @@ const PageDetailsProducts = async ({ params, searchParams }: Props) => {
   const [idStr, name] = (await params).slug;
   const id = Number(idStr);
 
-  const product = listProducts.find(p => p.id === id);
+  const product = await getProductById(Number(id));
 
   if (!product) {
     redirect("/404");
