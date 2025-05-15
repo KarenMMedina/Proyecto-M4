@@ -1,22 +1,14 @@
-"use client"
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { getProducts } from "@/services/products";
 import { IProduct } from "@/interfaces";
 
 import OneCard from "./OneCard";
 
-export const AllCards: React.FC = () => {
-    const [products, setProducts] = useState<IProduct[]>([]);
+interface AllCardsProps {
+    products: IProduct[]
+}
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const data = await getProducts();
-            setProducts(data);
-        };
-
-        fetchProducts();
-    }, []);
+export const AllCards: React.FC <AllCardsProps> = ({products}) => {
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

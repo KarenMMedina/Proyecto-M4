@@ -1,6 +1,5 @@
 import React from "react";
 import ProductDetail from "@/components/ProductDetail/ProductDetail";
-// import listProducts from "@/components/Products/listProducts";
 import { redirect } from "next/navigation";
 import { getProductById } from "@/services/products";
 
