@@ -3,26 +3,46 @@ import Button from "@/components/Button";
 import React from "react";
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
+import { postLogin } from "@/services/auth";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { useAuthContext } from "@/context/authContext";
 
 const loginSchema = yup.object().shape({
     email: yup.string().email('Invalid email').required('Email is required to log in'),
     password: yup.string().required("Password is required to log in")
 });
 
-interface FormData {
+export interface IFormData {
     email: string;
     password: string;
 }
 
 const LoginFormUI = () => {
+    const router = useRouter(); 
+    const { saveUserData } = useAuthContext();
 
-    const HandleOnSubmit = async (values: FormData) => {
-        console.log("Submit exitoso", JSON.stringify(values))
+    const HandleOnSubmit = async (values: IFormData) => {
+        console.log(values);
+        try {
+            const res = await postLogin(values);
+            console.log("res login");
+
+            saveUserData({ user: res.user, token: res.token });
+            
+            toast.success("Login Exitoso");
+            setTimeout(() => {
+                router.push("/");
+            }, 3000)
+        } catch (e: any) {
+            console.warn("Error al loguear usuario", e?.message);
+            toast.error("Login no completado");
+        }
     }
 
     return (
         <Formik
-            initialValues={{email: "lucialopez10@example.com", password: "Hola123!"}}
+            initialValues={{ email: "lucialopez10@example.com", password: "Hola123!" }}
             // {{ email: '', password: '' }}
             validationSchema={loginSchema}
             onSubmit={HandleOnSubmit}

@@ -5,6 +5,7 @@ import navbarLinks from "@/constants/navbar";
 import NavItem from "./NavItem";
 
 import { FiSearch, FiMenu } from "react-icons/fi";
+import AuthNav from "./components/AuthNavbar";
 
 const Navbar = () => {
     return (
@@ -44,6 +45,7 @@ const Navbar = () => {
                                 <NavItem key={index} {...navLink} />
                             ))}
                         </ul>
+                        <AuthNav />
                     </div>
                 </div>
             </nav>

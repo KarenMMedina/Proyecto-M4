@@ -9,18 +9,18 @@ export const navbarLinks: NavItemProps[] = [
 	// 	name: "Categorias",
 	// 	href: "/categorias",
 	// },
-	{
-		name: "Register",
-		href: "/Register",
-	},
-	{
-		name: "Login",
-		href: "/Login",
-	},
-	{
-		name: "Profile",
-		href: "/Profile",
-	},
+	// {
+	// 	name: "Register",
+	// 	href: "/Register",
+	// },
+	// {
+	// 	name: "Login",
+	// 	href: "/Login",
+	// },
+	// {
+	// 	name: "Profile",
+	// 	href: "/Profile",
+	// },
 	{
 		name: "Cart",
 		href: "/Cart",
