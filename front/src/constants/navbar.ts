@@ -21,10 +21,10 @@ export const navbarLinks: NavItemProps[] = [
 	// 	name: "Profile",
 	// 	href: "/Profile",
 	// },
-	{
-		name: "Cart",
-		href: "/Cart",
-	},
+	// {
+	// 	name: "Cart",
+	// 	href: "/Cart",
+	// },
 ];
 
 export default navbarLinks;

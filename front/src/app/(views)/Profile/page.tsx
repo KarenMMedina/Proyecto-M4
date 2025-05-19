@@ -1,5 +1,6 @@
 import React from "react";
 import { IUser, eRole } from "../../../interfaces/index"
+import UserDataUI from "./components/UserDataUI";
 
 export const Profile = () => {
     const User: IUser = {
@@ -53,30 +54,33 @@ export const Profile = () => {
         <div>
             <h2>Aquí está tu cuenta</h2>
             <div className="max-w-sm bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
-                <p><strong>Nombre:</strong> {User.name}</p>
-                <p><strong>Email:</strong> {User.email}</p>
-                <p><strong>Dirección:</strong> {User.address}</p>
-                <p><strong>Teléfono:</strong> {User.phone}</p>
-                <p><strong>Rol:</strong> {User.role}</p>
+                <UserDataUI />
             </div>
             <br />
             <h3>Órdenes:</h3>
             <div className="max-w-sm bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
-                {User.orders.map((order) => (
-                    <div key={order.id}>
-                        <p><strong>ID de orden:</strong> {order.id}</p>
-                        <p><strong>Fecha:</strong> {order.date}</p>
-                        <p><strong>Estado:</strong> {order.status}</p>
-                        <p><strong>Productos:</strong></p>
-                        <ul>
-                            {order.products.map((product, index) => (
-                                <li key={index}>
-                                    {product.name} - ${product.price}
-                                </li>
-                            ))}
-                        </ul>
+
+                {!User?.orders?.length ? (
+                    <div className="p-4 text-center text-gray-500 dark:text-gray-300">
+                        No tienes órdenes
                     </div>
-                ))}
+                ) : (
+                    User.orders.map((order) => (
+                        <div key={order.id}>
+                            <p><strong>ID de orden:</strong> {order.id}</p>
+                            <p><strong>Fecha:</strong> {order.date}</p>
+                            <p><strong>Estado:</strong> {order.status}</p>
+                            <p><strong>Productos:</strong></p>
+                            <ul>
+                                {order.products.map((product, index) => (
+                                    <li key={index}>
+                                        {product.name} - ${product.price}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))
+                )}
             </div>
         </div>
     )
