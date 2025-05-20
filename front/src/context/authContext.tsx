@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         setIsAuth(true);
         setToken(data.token);
 
-        localStorage.setItem("user", JSON.stringify(data));  
+        localStorage.setItem("user", JSON.stringify(data));
     };
 
     const resetUserData = () => {
@@ -31,7 +31,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         setIsAuth(false);
         setToken(null);
 
-        localStorage.removeItem("user");  
+        localStorage.removeItem("user");
+        localStorage.removeItem("cart");
+        localStorage.removeItem("total");
     };
 
     useEffect(() => {

@@ -1,58 +1,38 @@
+"use client";
+import { useCartContext } from "@/context/cartContext";
 import React from "react";
+import { toast } from "react-toastify";
+import CartItem from "./components/CartItem";
 
 export const Cart = () => {
-    const cartItems = [
-    {
-      id: 1,
-      name: "iPhone 11",
-      image: "https://purepng.com/public/uploads/large/smartphone-iphone-11-pro-max-silver-san.png",
-      price: 699,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      name: "Apple Watch Series 6",
-      image: "https://cdn-ipoint.waugi.com.ar/img/cms/landings-fichas/Watch/Watch%20Series%206/RX-S3_Smart_1-2-2.png",
-      price: 399,
-      quantity: 1,
-    },
-  ];
+  const { total, cart, removeFromCart } = useCartContext();
 
-  const subtotal = cartItems
-    .reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const onTrashClick = (id: number) => {
+    toast.success("Producto removido del carrito");
+    removeFromCart(id);
+  };
+
+  const subtotal = cart
+    .reduce((sum, item) => sum + (item.price || 0) * (item.quantity || 1), 0)
     .toFixed(2);
 
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-6">Tu Carrito</h1>
-      
-      {/* Lista de productos */}
+
       <div className="space-y-4 mb-8">
-        {cartItems.map((item) => (
-          <div
+        {cart.map((item) => (
+          <CartItem
             key={item.id}
-            className="flex items-center border rounded-lg p-4"
-          >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-20 h-20 object-cover rounded"
-            />
-            <div className="ml-4 flex-1">
-              <h2 className="font-medium">{item.name}</h2>
-              <p className="text-gray-600">${item.price.toFixed(2)}</p>
-            </div>
-            <div className="flex items-center space-x-2">
-              <button className="px-2 py-1 border rounded">−</button>
-              <span>{item.quantity}</span>
-              <button className="px-2 py-1 border rounded">+</button>
-            </div>
-            <button className="ml-4 text-red-500">Eliminar</button>
-          </div>
+            id={item.id}
+            name={item.name}
+            image={item.image}
+            price={item.price}
+            onTrashClick={onTrashClick}
+          />
         ))}
       </div>
 
-      {/* Resumen del pedido */}
       <div className="border-t pt-4">
         <div className="flex justify-between mb-2">
           <span className="font-medium">Subtotal</span>
@@ -73,5 +53,6 @@ export const Cart = () => {
     </div>
   );
 };
+
 
 export default Cart;

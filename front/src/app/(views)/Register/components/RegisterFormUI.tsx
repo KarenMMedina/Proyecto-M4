@@ -79,7 +79,7 @@ const RegisterFormUI = () => {
                     </div>
                     <div className="flex flex-col items-center">
                         <label htmlFor="password">Password: </label>
-                        <input type="text" id="password" name="password" value={values.password}
+                        <input type="password" id="password" name="password" value={values.password}
                             onChange={handleChange} onBlur={handleBlur}
                             placeholder="**********" className="border-2 rounded-lg px-4 py-2" />
                         <span className="text-red-700">{errors.password && touched.password && errors.password}</span>

@@ -1,7 +1,7 @@
 "use client";
 
 import { IProduct } from "@/interfaces";
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
 interface CartContextType {
     total: number;
@@ -9,6 +9,7 @@ interface CartContextType {
     addToCart: (product: Partial<IProduct>) => void;
     removeFromCart: (id: number) => void;
     resetCart: () => void;
+    isProductOnCart: (id: number) => boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -18,7 +19,24 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [total, setTotal] = useState<CartContextType["total"]>();
 
     const addToCart = (product: Partial<IProduct>) => {
-        setCart((prevCart) => [...(prevCart || []), product]);
+        if (
+            typeof product.id !== "number" ||
+            typeof product.name !== "string" ||
+            typeof product.image !== "string" ||
+            typeof product.price !== "number"
+        ) {
+            console.warn("❌ Producto incompleto, no se agregó al carrito:", product);
+            return;
+        }
+
+        setCart((prevCart) => {
+            const cart = prevCart || [];
+            const exists = cart.some((p) => p.id === product.id);
+            if (exists) return cart;  
+
+            return [...cart, product]; 
+        });
+
         setTotal((prevTotal) => (prevTotal || 0) + 1);
     };
 
@@ -39,6 +57,30 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         }, 3000)
     };
 
+    const isProductOnCart = (productId: number) => {
+        return Boolean(cart?.find((p) => p.id === productId))
+    }
+
+    useEffect(() => {
+        if (!cart) {
+            return;
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("total", total?.toString() || "0")
+    }, [cart, total]);
+
+    useEffect(() => {
+        const localCart = localStorage.getItem("cart");
+        const localTotal = localStorage.getItem("total");
+
+        if (!localCart) {
+            return setCart([])
+        }
+        setCart(JSON.parse(localCart));
+        setTotal(Number(localTotal));
+    }, []);
+
     return (
         <CartContext.Provider value={{
             cart: cart || [],
@@ -46,6 +88,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             addToCart,
             removeFromCart,
             resetCart,
+            isProductOnCart,
         }}>
             {children}
         </CartContext.Provider>

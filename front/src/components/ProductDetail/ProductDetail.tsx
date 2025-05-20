@@ -1,8 +1,9 @@
 import { IProduct } from "@/interfaces";
 import React, { FC } from "react";
 import Image from "next/image";
+import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
-export const ProductDetail: FC<IProduct> = ({ name, description, price, stock, image }) => {
+export const ProductDetail: FC<IProduct> = ({ id, name, description, price, stock, image }) => {
     const getLink = (name: string, id: IProduct["id"]) => {
         return `/DetailsProducts/${id}/${name}`;
     };
@@ -26,6 +27,11 @@ export const ProductDetail: FC<IProduct> = ({ name, description, price, stock, i
                 <br />
                 <p className="text-gray-700 dark:text-gray-300 text-lg font-medium">${price}</p>
                 <p className="text-gray-700 dark:text-gray-300 text-lg font-medium">Stock: {stock}</p>
+                <div className="mt-4">   
+                    {typeof id === "number" && (
+                        <AddToCartButton product={{ id, name, price, image }} />
+                    )}
+                </div>
             </div>
         </div>
     )
