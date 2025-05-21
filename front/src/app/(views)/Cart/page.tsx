@@ -3,9 +3,10 @@ import { useCartContext } from "@/context/cartContext";
 import React from "react";
 import { toast } from "react-toastify";
 import CartItem from "./components/CartItem";
+import CheckoutOrder from "./components/CheckoutOrder";
 
 export const Cart = () => {
-  const { total, cart, removeFromCart } = useCartContext();
+  const { total, cart, removeFromCart, checkOutLoader  } = useCartContext();
 
   const onTrashClick = (id: number) => {
     toast.success("Producto removido del carrito");
@@ -15,6 +16,10 @@ export const Cart = () => {
   const subtotal = cart
     .reduce((sum, item) => sum + (item.price || 0) * (item.quantity || 1), 0)
     .toFixed(2);
+
+  if (checkOutLoader ) {
+    return <p>Loading...</p>
+  }
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -46,9 +51,7 @@ export const Cart = () => {
           <span>Total</span>
           <span>${subtotal}</span>
         </div>
-        <button className="w-full py-3 bg-blue-600 text-white rounded-lg">
-          Ir a pagar
-        </button>
+        <CheckoutOrder />
       </div>
     </div>
   );

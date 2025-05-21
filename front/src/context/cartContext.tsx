@@ -10,6 +10,8 @@ interface CartContextType {
     removeFromCart: (id: number) => void;
     resetCart: () => void;
     isProductOnCart: (id: number) => boolean;
+    checkOutLoader?: boolean;
+    toggleLoaderCheckout: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -17,6 +19,9 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<CartContextType["cart"] | undefined>();
     const [total, setTotal] = useState<CartContextType["total"]>();
+
+    const [checkOutLoader, setcheckOutLoader] = useState<boolean | undefined>();
+
 
     const addToCart = (product: Partial<IProduct>) => {
         if (
@@ -32,9 +37,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         setCart((prevCart) => {
             const cart = prevCart || [];
             const exists = cart.some((p) => p.id === product.id);
-            if (exists) return cart;  
+            if (exists) return cart;
 
-            return [...cart, product]; 
+            return [...cart, product];
         });
 
         setTotal((prevTotal) => (prevTotal || 0) + 1);
@@ -59,6 +64,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
     const isProductOnCart = (productId: number) => {
         return Boolean(cart?.find((p) => p.id === productId))
+    }
+
+    const toggleLoaderCheckout = () => {
+        setcheckOutLoader((state) => !state) 
     }
 
     useEffect(() => {
@@ -89,6 +98,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             removeFromCart,
             resetCart,
             isProductOnCart,
+            checkOutLoader,
+            toggleLoaderCheckout 
         }}>
             {children}
         </CartContext.Provider>
