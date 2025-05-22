@@ -7,14 +7,14 @@ import { useRouter } from "next/navigation";
 import CartPageUI from "./CartPageUI";
 
 const AuthNav = () => {
-    const Router = useRouter();
+    const router = useRouter();
     const { isAuth, user, resetUserData } = useAuthContext()
 
     const logoutAction = () => {
         resetUserData();
 
         setTimeout(() => {
-            Router.push("/");
+            router.push("/");
             toast.success("Sesion cerrada con exito")
         }, 500)
     }
