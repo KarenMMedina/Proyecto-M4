@@ -5,7 +5,7 @@ import { createContext, ReactNode, useContext, useEffect, useState } from "react
 
 interface CartContextType {
     total: number;
-    cart: any[];
+    cart: Partial<IProduct>[];
     addToCart: (product: Partial<IProduct>) => void;
     removeFromCart: (id: number) => void;
     resetCart: () => void;
@@ -17,7 +17,7 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-    const [cart, setCart] = useState<CartContextType["cart"] | undefined>();
+    const [cart, setCart] = useState<Partial<IProduct>[]>();
     const [total, setTotal] = useState<CartContextType["total"]>();
 
     const [checkOutLoader, setcheckOutLoader] = useState<boolean | undefined>();
@@ -56,10 +56,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const resetCart = () => {
-        setTimeout(() => {
             setCart([]);
             setTotal(0);
-        }, 3000)
     };
 
     const isProductOnCart = (productId: number) => {
