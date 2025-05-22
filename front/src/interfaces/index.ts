@@ -43,7 +43,14 @@ interface IUser {
     orders: IOrder[];
 }
 
-// export default IProduct;
-export type { IProduct, ICategory, IOrder, IUser };
+type CartProduct = {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  quantity?: number; 
+};
+
+export type { IProduct, ICategory, IOrder, IUser,  CartProduct };
 export { eRole, eOrderStatus };
 

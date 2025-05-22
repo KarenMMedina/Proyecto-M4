@@ -1,13 +1,13 @@
 "use client";
 
-import { IProduct } from "@/interfaces";
+import { CartProduct, IProduct } from "@/interfaces";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "./authContext";
 
 interface CartContextType {
     total: number;
-    cart: Partial<IProduct>[];
-    addToCart: (product: Partial<IProduct>) => void;
+    cart: CartProduct[];
+    addToCart: (product: CartProduct) => void;
     removeFromCart: (id: number) => void;
     resetCart: () => void;
     isProductOnCart: (id: number) => boolean;
@@ -18,14 +18,14 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-    const [cart, setCart] = useState<Partial<IProduct>[]>();
+    const [cart, setCart] = useState<CartProduct[]>([]);
     const [total, setTotal] = useState<CartContextType["total"]>();
     const { user, isAuth } = useAuthContext();
 
     const [checkOutLoader, setcheckOutLoader] = useState<boolean | undefined>();
 
 
-    const addToCart = (product: Partial<IProduct>) => {
+    const addToCart = (product: CartProduct) => {
         if (
             typeof product.id !== "number" ||
             typeof product.name !== "string" ||
