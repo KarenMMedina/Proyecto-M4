@@ -2,6 +2,7 @@
 
 import { IProduct } from "@/interfaces";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { useAuthContext } from "./authContext";
 
 interface CartContextType {
     total: number;
@@ -19,6 +20,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<Partial<IProduct>[]>();
     const [total, setTotal] = useState<CartContextType["total"]>();
+    const { user, isAuth } = useAuthContext();
 
     const [checkOutLoader, setcheckOutLoader] = useState<boolean | undefined>();
 
@@ -56,8 +58,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const resetCart = () => {
-            setCart([]);
-            setTotal(0);
+        setCart([]);
+        setTotal(0);
     };
 
     const isProductOnCart = (productId: number) => {
@@ -65,8 +67,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
 
     const toggleLoaderCheckout = () => {
-        setcheckOutLoader((state) => !state) 
+        setcheckOutLoader((state) => !state)
     }
+
+    useEffect(() => {
+        resetCart();
+    }, [user]);
+
 
     useEffect(() => {
         if (!cart) {
@@ -97,7 +104,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             resetCart,
             isProductOnCart,
             checkOutLoader,
-            toggleLoaderCheckout 
+            toggleLoaderCheckout
         }}>
             {children}
         </CartContext.Provider>
