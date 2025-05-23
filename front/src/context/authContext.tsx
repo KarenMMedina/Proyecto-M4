@@ -14,7 +14,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<IUser | null>(null);
-    const [isAuth, setIsAuth] = useState<boolean | null>(false);
+    const [isAuth, setIsAuth] = useState<boolean | null>(null);
     const [token, setToken] = useState<string | null>(null);
 
     const saveUserData = (data: { user: IUser; token: string }) => {

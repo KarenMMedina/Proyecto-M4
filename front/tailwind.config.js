@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         cream: "#EAEBD0", 
         redPalette: {
-          soft: "#DA6C6C",
+          soft:"#e2ac9e",
           base: "#CD5656",
           dark: "#AF3E3E",
         },

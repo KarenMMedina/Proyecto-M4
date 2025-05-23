@@ -21,6 +21,10 @@ const AuthNav = () => {
 
     const linkClass = "py-1 px-4 rounded-md bg-white/10 shadow-md text-black transition duration-200 hover:bg-redPalette-soft hover:text-cream";
 
+    if(isAuth === null){
+        return <p>Loading...</p>
+    }
+    
     return (
         <div className="flex gap-4 items-center">
             {isAuth ? (
