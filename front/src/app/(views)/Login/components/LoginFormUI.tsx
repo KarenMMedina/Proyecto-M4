@@ -19,7 +19,7 @@ export interface IFormData {
 }
 
 const LoginFormUI = () => {
-    const router = useRouter(); 
+    const router = useRouter();
     const { saveUserData } = useAuthContext();
 
     const HandleOnSubmit = async (values: IFormData) => {
@@ -29,7 +29,7 @@ const LoginFormUI = () => {
             console.log("res login");
 
             saveUserData({ user: res.user, token: res.token });
-            
+
             toast.success("Login Exitoso");
             setTimeout(() => {
                 router.push("/");
@@ -48,23 +48,31 @@ const LoginFormUI = () => {
             onSubmit={HandleOnSubmit}
         >
             {({ isSubmitting, values, handleBlur, handleChange, handleSubmit, errors, touched, }) => (
-                <Form onSubmit={handleSubmit} className="w-[500px] m-auto border-2 flex justify-center flex-col items-center">
+                <Form onSubmit={handleSubmit}
+                    className="
+            max-w-md w-full mx-auto mt-10 
+            bg-cream p-8 rounded-xl shadow 
+            border border-redPalette-dark
+            flex flex-col gap-5">
                     <div className="flex flex-col items-center">
-                        <label htmlFor="email">Email: </label>
+                        <label htmlFor="email" className="text-sm font-semibold text-redPalette-dark">Email: </label>
                         <input type="text" id="email" name="email" value={values.email}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="example@gmail.com" className="border-2 rounded-lg px-4 py-2" />
-                        <span className="text-red-700">{errors.email && touched.email && errors.email}</span>
+                            placeholder="example@gmail.com"
+                            className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
+                        <span className="text-red-700 text-sm mt-1">{errors.email && touched.email && errors.email}</span>
                     </div>
                     <div className="flex flex-col items-center">
-                        <label htmlFor="password">Password: </label>
+                        <label htmlFor="password" className="text-sm font-semibold text-redPalette-dark">Password: </label>
                         <input type="password" id="password" name="password" value={values.password}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="**********" className="border-2 rounded-lg px-4 py-2" />
-                        <span className="text-red-700">{errors.password && touched.password && errors.password}</span>
+                            placeholder="**********" 
+                            className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm"  />
+                        <span className="text-red-700 text-sm mt-1">{errors.password && touched.password && errors.password}</span>
                     </div>
-                    <div className="flex flex-col">
-                        <Button type="submit" textContent="Sign in" className="bg-black text-white rounded-lg px-4 py-2" />
+                    <div className="flex justify-center mt-4">
+                        <Button type="submit" textContent="Sign in"
+                        className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors" />
                     </div>
                 </Form>
             )}

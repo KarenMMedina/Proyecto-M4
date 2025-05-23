@@ -4,7 +4,8 @@ import LoginFormUI from "./components/LoginFormUI";
 export const Login = () => {
     return (
         <div>
-            <h2>Login</h2>
+            <br />
+            <h2 className="text-2xl font-bold text-center text-black mb-4">Login</h2>
             <div>
                 <LoginFormUI />
             </div>

@@ -9,25 +9,42 @@ export const ProductDetail: FC<IProduct> = ({ id, name, description, price, stoc
     };
 
     return (
-        <div className="max-w-sm bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-5">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{name}</h2>
-                <div className="flex justify-center items-center">
+        <div className="
+            w-full max-w-md 
+            bg-cream 
+            border border-redPalette-dark 
+            rounded-xl 
+            shadow 
+            hover:shadow-md 
+            transition-shadow 
+            duration-300 
+            flex flex-col 
+            overflow-hidden 
+            mx-auto
+        ">
+            <div className="px-6 pb-6 text-center">
+                <h2 className="text-xl font-bold text-redPalette-dark mb-2 my-4">{name}</h2>
+                <div className="w-full flex justify-center items-center p-4 relative"
+                    style={{ height: 250, minHeight: 250 }}>
                     <Image
                         src={image}
                         alt={name}
-                        width={300}
-                        height={300}
-                        className="object-contain"
-                        style={{ width: "auto", height: "auto" }}
+                        width={220}
+                        height={220}
+                        className="object-contain max-w-full max-h-full"
+                        style={{ minWidth: 150, minHeight: 150 }}
                         priority
                     />
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 text-lg font-medium">{description}</p>
+                <div className="text-black text-sm mb-4">
+                    <p className="font-semibold">{description}</p>
+                </div>
                 <br />
-                <p className="text-gray-700 dark:text-gray-300 text-lg font-medium">${price}</p>
-                <p className="text-gray-700 dark:text-gray-300 text-lg font-medium">Stock: {stock}</p>
-                <div className="mt-4">   
+                <div className="flex flex-col gap-2 text-sm text-redPalette-base">
+                    <p className="font-semibold text-redPalette-dark">Precio: ${price}</p>
+                    <p className="font-semibold text-redPalette-dark">Stock disponible: {stock}</p>
+                </div>
+                <div className="mt-5">
                     {typeof id === "number" && (
                         <AddToCartButton product={{ id, name, price, image }} />
                     )}

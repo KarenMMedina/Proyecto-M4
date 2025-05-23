@@ -47,7 +47,7 @@ const CheckoutOrder = () => {
                 disabled={total === 0}
                 onClick={onGenerateOrder}
                 textContent="Finalizar compra"
-                className="w-full py-3 bg-blue-600 text-white rounded-lg" />
+                className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors"  />
         </>
     )
 }

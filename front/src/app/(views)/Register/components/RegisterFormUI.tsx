@@ -48,44 +48,54 @@ const RegisterFormUI = () => {
             onSubmit={HandleOnSubmit}
         >
             {({ isSubmitting, values, handleBlur, handleChange, handleSubmit, errors, touched, }) => (
-                <Form onSubmit={handleSubmit} className="w-[500px] m-auto border-2 flex justify-center flex-col items-center">
+                <Form onSubmit={handleSubmit} className="
+            max-w-md w-full mx-auto mt-10 
+            bg-cream p-8 rounded-xl shadow 
+            border border-redPalette-dark
+            flex flex-col gap-5
+          ">
                     <div className="flex flex-col items-center">
-                        <label htmlFor="name">Name: </label>
+                        <label htmlFor="name" className="text-sm font-semibold text-redPalette-dark">Name: </label>
                         <input type="text" id="name" name="name" value={values.name}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="Escribe aqui tu nombre y apellido" className="border-2 rounded-lg px-4 py-2" />
-                        <span className="text-red-700">{errors.name && touched.name && errors.name}</span>
+                            placeholder="Tu nombre y apellido"
+                            className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
+                        <span className="text-red-700 text-xs mt-1">{errors.name && touched.name && errors.name}</span>
                     </div>
                     <div className="flex flex-col items-center">
-                        <label htmlFor="address">Address: </label>
+                        <label htmlFor="address" className="text-sm font-semibold text-redPalette-dark">Address: </label>
                         <input type="text" id="address" name="address" value={values.address}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="Escribe aqui tu direccion" className="border-2 rounded-lg px-4 py-2" />
-                        <span className="text-red-700">{errors.address && touched.address && errors.address}</span>
+                            placeholder="Tu dirección"
+                            className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
+                        <span className="text-red-700 text-xs mt-1">{errors.address && touched.address && errors.address}</span>
                     </div>
                     <div className="flex flex-col items-center">
-                        <label htmlFor="phone">Phone: </label>
+                        <label htmlFor="phone" className="text-sm font-semibold text-redPalette-dark">Phone: </label>
                         <input type="text" id="phone" name="phone" value={values.phone}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="+5493814xxxxxx" className="border-2 rounded-lg px-4 py-2" />
-                        <span className="text-red-700">{errors.phone && touched.phone && errors.phone}</span>
+                            placeholder="+549381xxxxxxx"
+                            className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
+                        <span className="text-red-700 text-xs mt-1">{errors.phone && touched.phone && errors.phone}</span>
                     </div>
                     <div className="flex flex-col items-center">
-                        <label htmlFor="email">Email: </label>
+                        <label htmlFor="email" className="text-sm font-semibold text-redPalette-dark">Email: </label>
                         <input type="text" id="email" name="email" value={values.email}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="example@gmail.com" className="border-2 rounded-lg px-4 py-2" />
-                        <span className="text-red-700">{errors.email && touched.email && errors.email}</span>
+                            placeholder="ejemplo@gmail.com"
+                            className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
+                        <span className="text-red-700 text-xs mt-1">{errors.email && touched.email && errors.email}</span>
                     </div>
                     <div className="flex flex-col items-center">
-                        <label htmlFor="password">Password: </label>
+                        <label htmlFor="password" className="text-sm font-semibold text-redPalette-dark">Password: </label>
                         <input type="password" id="password" name="password" value={values.password}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="**********" className="border-2 rounded-lg px-4 py-2" />
-                        <span className="text-red-700">{errors.password && touched.password && errors.password}</span>
+                            placeholder="**********" className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
+                        <span className="text-red-700 text-xs mt-1">{errors.password && touched.password && errors.password}</span>
                     </div>
-                    <div className="flex flex-col">
-                        <Button type="submit" textContent="Sign in" className="bg-black text-white rounded-lg px-4 py-2" />
+                    <div className="flex justify-center mt-4">
+                        <Button type="submit" textContent="Sign in" 
+                        className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors"/>
                     </div>
                 </Form>
             )}

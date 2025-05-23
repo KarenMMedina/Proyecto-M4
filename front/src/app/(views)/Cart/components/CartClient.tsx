@@ -23,36 +23,44 @@ const CartClient = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Tu Carrito</h1>
+    <div className="max-w-4xl mx-auto p-6 mt-10 bg-cream dark:bg-gray-900 rounded-xl shadow-lg">
+      <h1 className="text-3xl font-bold text-center text-black dark:text-white mb-8">Tu Carrito</h1>
 
       <div className="space-y-4 mb-8">
-        {cart.map((item) => (
-          <CartItem
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            image={item.image}
-            price={item.price}
-            onTrashClick={onTrashClick}
-          />
-        ))}
+        {cart.length === 0 ? (
+          <p className="text-center text-gray-600 dark:text-gray-400">
+            No hay productos en el carrito.
+          </p>
+        ) : (
+          cart.map((item) => (
+            <CartItem
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              image={item.image}
+              price={item.price}
+              onTrashClick={onTrashClick}
+            />
+          ))
+        )}
       </div>
 
-      <div className="border-t pt-4">
-        <div className="flex justify-between mb-2">
-          <span className="font-medium">Subtotal</span>
+      <div className="border-t border-gray-300 dark:border-gray-700 pt-6">
+        <div className="flex justify-between mb-2 text-gray-700 dark:text-gray-300">
+          <span className="font-semibold">Subtotal</span>
           <span>${subtotal}</span>
         </div>
-        <div className="flex justify-between mb-4">
-          <span className="font-medium">Envío</span>
+        <div className="flex justify-between mb-2 text-gray-700 dark:text-gray-300">
+          <span className="font-semibold">Envío</span>
           <span>Gratis</span>
         </div>
-        <div className="flex justify-between text-xl font-bold mb-6">
+        <div className="flex justify-between text-xl font-bold mb-6 text-black dark:text-white">
           <span>Total</span>
           <span>${subtotal}</span>
+        </div >
+        <div className="flex justify-center mt-4"> 
+          <CheckoutOrder />
         </div>
-        <CheckoutOrder />
       </div>
     </div>
   );

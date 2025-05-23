@@ -9,7 +9,16 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        cream: "#EAEBD0", 
+        redPalette: {
+          soft: "#DA6C6C",
+          base: "#CD5656",
+          dark: "#AF3E3E",
+        },
+      },
+    },
   },
   plugins: [],
 }

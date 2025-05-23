@@ -53,13 +53,14 @@ export const Profile = () => {
 
     return (
         <div>
-            <h2>Aquí está tu cuenta</h2>
-            <div className="max-w-sm bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
+            <br />
+            <h2 className="text-center text-2xl font-bold text-black mb-4">Aquí está tu cuenta</h2>
+            <div>
                 <UserDataUI />
             </div>
             <br />
-            <h3>Órdenes:</h3>
-            <div className="max-w-sm bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
+            <h3 className="text-center text-2xl font-bold text-black mb-4">Órdenes:</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                 <OrdersDetails />
             </div>
         </div>
