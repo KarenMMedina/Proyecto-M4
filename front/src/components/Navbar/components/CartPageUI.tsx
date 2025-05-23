@@ -11,10 +11,10 @@ const CartPageUI = () => {
     // const cartItems = "5";
 
     return (
-        <Link href="/Cart">
-            <div className="relative w-10 h-10">
-                <span className="text-black font-medium">Cart</span>
-                <span className="absolute top-0 right-0 bg-red-500 text-black rounded-full w-5 h-5 text-xs flex items-center justify-center">{total}</span>
+        <Link href="/Cart" className="relative flex items-center px-3 rounded-md text-black font-medium transition-colors duration-200 hover:bg-redPalette-soft hover:text-cream">
+            <div>
+                <span>Cart</span>
+                <span className="ml-1 absolute -top-1 -right-3 bg-black text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">{total}</span>
             </div>
         </Link>
     )

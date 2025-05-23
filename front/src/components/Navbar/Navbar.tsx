@@ -8,10 +8,10 @@ const Navbar = () => {
     return (
         <>
             <nav className="bg-cream/90 shadow-lg backdrop-blur-md rounded-xl mx-4 mt-4">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-redPalette-dark">Flowbite</span>
+                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+                    <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="/logo-Iclass.png" className="h-14" alt="iClass Logo" />
+                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">iClass</span>
                     </a>
                     <div className="flex md:order-2">
                         <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
@@ -37,7 +37,7 @@ const Navbar = () => {
                             </div>
                             <input type="text" id="search-navbar" className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
                         </div>
-                        <ul className="border border-redPalette-dark text-redPalette-dark rounded-md px-3 py-2 hover:bg-redPalette-soft transition">
+                        <ul className="px-3">
                             {navbarLinks.map((navLink, index) => (
                                 <NavItem key={index} {...navLink} />
                             ))}

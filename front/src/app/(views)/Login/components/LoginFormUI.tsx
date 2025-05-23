@@ -7,6 +7,7 @@ import { postLogin } from "@/services/auth";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/context/authContext";
+import usePublic from "@/hooks/usePublic";
 
 const loginSchema = yup.object().shape({
     email: yup.string().email('Invalid email').required('Email is required to log in'),
@@ -19,6 +20,7 @@ export interface IFormData {
 }
 
 const LoginFormUI = () => {
+    usePublic();
     const router = useRouter();
     const { saveUserData } = useAuthContext();
 

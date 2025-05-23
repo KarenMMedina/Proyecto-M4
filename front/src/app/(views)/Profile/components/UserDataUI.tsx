@@ -1,8 +1,10 @@
 "use client";
 import { useAuthContext } from "@/context/authContext";
+import usePrivate from "@/hooks/usePrivate";
 import React from "react";
 
 const UserDataUI = () => {
+    usePrivate();
     const { user } = useAuthContext();
 
     if (!user) {

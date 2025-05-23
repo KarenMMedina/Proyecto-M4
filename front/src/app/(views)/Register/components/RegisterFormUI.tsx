@@ -6,6 +6,7 @@ import * as yup from 'yup';
 import { postRegister } from "@/services/auth";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import usePublic from "@/hooks/usePublic";
 
 const RegisterSchema = yup.object().shape({
     email: yup.string().email('Invalid email').required('Email is required to register'),
@@ -24,6 +25,7 @@ export interface FormData {
 }
 
 const RegisterFormUI = () => {
+    usePublic();
     const router = useRouter();
 
     const HandleOnSubmit = async (values: FormData) => {

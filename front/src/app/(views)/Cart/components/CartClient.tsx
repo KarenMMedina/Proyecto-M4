@@ -4,9 +4,11 @@ import { useCartContext } from "@/context/cartContext";
 import { toast } from "react-toastify";
 import CartItem from "./CartItem";
 import CheckoutOrder from "./CheckoutOrder";
+import usePrivate from "@/hooks/usePrivate";
 
 
 const CartClient = () => {
+  usePrivate();
   const { total, cart, removeFromCart, checkOutLoader } = useCartContext();
 
   const onTrashClick = (id: number) => {

@@ -44,7 +44,9 @@ export const ProductDetail: FC<IProduct> = ({ id, name, description, price, stoc
                     <p className="font-semibold text-redPalette-dark">Precio: ${price}</p>
                     <p className="font-semibold text-redPalette-dark">Stock disponible: {stock}</p>
                 </div>
-                <div className="mt-5">
+                <div className="bg-redPalette-base 
+                text-black font-medium px-6 py-2 rounded-lg
+                hover:bg-redPalette-dark hover:text-white transition-colors">
                     {typeof id === "number" && (
                         <AddToCartButton product={{ id, name, price, image }} />
                     )}
