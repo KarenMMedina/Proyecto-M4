@@ -3,7 +3,7 @@ import { NavItemProps } from "@/components/Navbar/NavItem";
 export const navbarLinks: NavItemProps[] = [
 	{
 		name: "Home",
-		href: "/",
+		href: "/Home",
 	},
 	// {
 	// 	name: "Categorias",

@@ -13,7 +13,7 @@ const LandingPage = () => {
 					Elegí estilo, potencia y exclusividad. Descubrí los mejores productos Apple a un click.
 				</p>
 				<Link
-					href="/"
+					href="/Home"
 					className="mt-8 inline-block bg-redPalette-base text-black font-semibold py-3 px-6 rounded-full hover:bg-redPalette-dark transition hover:text-white"
 				>
 					Entrar a la tienda

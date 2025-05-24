@@ -1,7 +1,7 @@
 "use client";
 
 import { CartProduct, IProduct } from "@/interfaces";
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useRef, useState } from "react";
 import { useAuthContext } from "./authContext";
 
 interface CartContextType {
@@ -19,10 +19,11 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<CartProduct[]>([]);
-    const [total, setTotal] = useState<CartContextType["total"]>();
+    const [total, setTotal] = useState<number>(0);   
     const { user, isAuth } = useAuthContext();
 
     const [checkOutLoader, setcheckOutLoader] = useState<boolean | undefined>();
+    const hasMounted = useRef(false);  
 
 
     const addToCart = (product: CartProduct) => {
@@ -71,29 +72,33 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
 
     useEffect(() => {
-        resetCart();
-    }, [user]);
-
-
-    useEffect(() => {
-        if (!cart) {
-            return;
-        }
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        localStorage.setItem("total", total?.toString() || "0")
-    }, [cart, total]);
-
-    useEffect(() => {
         const localCart = localStorage.getItem("cart");
         const localTotal = localStorage.getItem("total");
 
-        if (!localCart) {
-            return setCart([])
+        if (localCart) {
+            setCart(JSON.parse(localCart));
         }
-        setCart(JSON.parse(localCart));
-        setTotal(Number(localTotal));
+
+        if (localTotal) {
+            setTotal(Number(localTotal));
+        }
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("total", total.toString());
+    }, [cart, total]);
+
+    useEffect(() => {
+        if (!hasMounted.current) {
+            hasMounted.current = true;
+            return;
+        }
+
+        if (!user) {
+            resetCart();
+        }
+    }, [user]);
 
     return (
         <CartContext.Provider value={{

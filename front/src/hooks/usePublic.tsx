@@ -9,7 +9,7 @@ const usePublic = () => {
 	const router = useRouter();
 	
 	useEffect(() => {
-		isAuth && router.push("/")
+		isAuth && router.push("/Home")
 	}, [isAuth]);
 	return null;
 };

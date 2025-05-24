@@ -34,7 +34,7 @@ const LoginFormUI = () => {
 
             toast.success("Login Exitoso");
             setTimeout(() => {
-                router.push("/");
+                router.push("/Home");
             }, 3000)
         } catch (e: any) {
             console.warn("Error al loguear usuario", e?.message);

@@ -11,7 +11,7 @@ export const Page404 = () => {
                     Lo sentimos, la página que estás buscando no existe o fue movida.
                 </p>
                 <Link
-                    href="/"
+                    href="/Home"
                     className="inline-block px-6 py-2 bg-redPalette-soft text-black rounded-md shadow-md transition hover:bg-redPalette-dark hover:text-white"
                 >
                     Volver al inicio

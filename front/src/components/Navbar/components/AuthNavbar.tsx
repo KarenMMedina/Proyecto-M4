@@ -15,7 +15,7 @@ const AuthNav = () => {
         resetUserData();
 
         setTimeout(() => {
-            router.push("/");
+            router.push("/Home");
             toast.success("Sesion cerrada con exito")
         }, 500)
     }
