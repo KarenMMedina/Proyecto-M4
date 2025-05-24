@@ -12,7 +12,7 @@ const NavItem: FC<NavItemProps> = (props) => {
         <li>
             <a
                 href={href}
-                className="py-2 px-4 rounded-md bg-white/10 shadow-md text-black transition duration-200 hover:bg-redPalette-soft hover:text-cream">
+                className="py-2 px-4 rounded-md bg-white/10 shadow-md text-black transition duration-200 hover:bg-redPalette-base hover:text-cream">
                 {name}
             </a>
         </li>

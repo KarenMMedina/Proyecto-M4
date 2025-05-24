@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import CartItem from "./CartItem";
 import CheckoutOrder from "./CheckoutOrder";
 import usePrivate from "@/hooks/usePrivate";
+import { ClipLoader } from "react-spinners";
 
 
 const CartClient = () => {
@@ -21,8 +22,23 @@ const CartClient = () => {
     .toFixed(2);
 
   if (checkOutLoader) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex justify-center items-center h-screen bg-cream">
+        <ClipLoader
+          color="#CD5656" // redPalette.base
+          size={60}
+          speedMultiplier={1.2}
+        />
+        <p className="mt-4 text-redPalette-dark text-lg font-semibold">
+          Generando tu orden, por favor aguarda...
+        </p>
+      </div>
+    );
   }
+
+  // if (checkOutLoader) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <div className="max-w-4xl mx-auto p-6 mt-10 bg-cream dark:bg-gray-900 rounded-xl shadow-lg">
@@ -60,7 +76,7 @@ const CartClient = () => {
           <span>Total</span>
           <span>${subtotal}</span>
         </div >
-        <div className="flex justify-center mt-4"> 
+        <div className="flex justify-center mt-4">
           <CheckoutOrder />
         </div>
       </div>
