@@ -51,11 +51,10 @@ const RegisterFormUI = () => {
         >
             {({ isSubmitting, values, handleBlur, handleChange, handleSubmit, errors, touched, }) => (
                 <Form onSubmit={handleSubmit} className="
-            max-w-md w-full mx-auto mt-10 
-            bg-cream p-8 rounded-xl shadow 
-            border border-redPalette-dark
-            flex flex-col gap-5
-          ">
+             max-w-md w-full mx-auto mt-10 
+             bg-cream p-8 rounded-2xl shadow-2xl 
+             flex flex-col gap-5
+            ">
                     <div className="flex flex-col items-center">
                         <label htmlFor="name" className="text-sm font-semibold text-redPalette-dark">Name: </label>
                         <input type="text" id="name" name="name" value={values.name}
@@ -96,8 +95,8 @@ const RegisterFormUI = () => {
                         <span className="text-red-700 text-xs mt-1">{errors.password && touched.password && errors.password}</span>
                     </div>
                     <div className="flex justify-center mt-4">
-                        <Button type="submit" textContent="Sign in" 
-                        className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors"/>
+                        <Button type="submit" textContent="Sign in"
+                            className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors" />
                     </div>
                 </Form>
             )}

@@ -53,9 +53,8 @@ const LoginFormUI = () => {
                 <Form onSubmit={handleSubmit}
                     className="
             max-w-md w-full mx-auto mt-10 
-            bg-cream p-8 rounded-xl shadow 
-            border border-redPalette-dark
-            flex flex-col gap-5">
+             bg-cream p-8 rounded-2xl shadow-2xl 
+             flex flex-col gap-5">
                     <div className="flex flex-col items-center">
                         <label htmlFor="email" className="text-sm font-semibold text-redPalette-dark">Email: </label>
                         <input type="text" id="email" name="email" value={values.email}
