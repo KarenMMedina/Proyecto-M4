@@ -4,7 +4,7 @@ import React from "react";
 export const Page404 = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-soft px-4">
-            <div className="text-center border border-redPalette-dark rounded-xl p-10 shadow-lg bg-cream">
+            <div className="text-center bg-cream rounded-2xl shadow-2xl  p-10">
                 <h1 className="text-6xl font-bold text-redPalette-dark mb-4">404</h1>
                 <h2 className="text-2xl text-black font-semibold mb-2">Página no encontrada</h2>
                 <p className="text-redPalette-dark mb-6">

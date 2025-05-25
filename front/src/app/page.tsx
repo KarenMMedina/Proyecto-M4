@@ -21,7 +21,7 @@ const LandingPage = () => {
 			</section>
 
 			<section className="flex flex-col md:flex-row items-center justify-center gap-10 my-16 max-w-6xl">
-				<div className="w-full md:w-1/2">
+				<div className="w-full md:w-1/2 animate-pulse bg-cream/60">
 					<Image
 						src="/IPhone.png"
 						alt="iPhone"

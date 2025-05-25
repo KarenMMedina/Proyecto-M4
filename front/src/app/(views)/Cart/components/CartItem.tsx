@@ -14,7 +14,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, name, image, price, onTrashClic
             <img
                 src={image}
                 alt={name}
-                className="w-20 h-20 object-cover rounded"
+                className="w-20 h-20 object-contain rounded bg-cream"
             />
             <div className="ml-4 flex-1">
                 <h2 className="font-medium">{name}</h2>

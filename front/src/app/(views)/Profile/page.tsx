@@ -52,7 +52,7 @@ export const Profile = () => {
     };
 
     return (
-        <div>
+        <div className="min-h-screen bg-redPallete-soft bg-[url('/Fondo-abajo.png')] bg-no-repeat bg-cover bg-center bg-blend-overlay px-6 py-10">
             <br />
             <h2 className="text-center text-2xl font-bold text-black mb-4">Aquí está tu cuenta</h2>
             <div>
@@ -64,7 +64,7 @@ export const Profile = () => {
                 <OrdersDetails />
             </div>
         </div>
-    )
+    );
 }
 
 export default Profile;
