@@ -13,7 +13,7 @@ const UserDataUI = () => {
     return (
         <div className="max-w-md mx-auto bg-cream border rounded-2xl shadow-2xl p-6 space-y-4">
             <p>
-                <span className="font-semibold text-redPalette-dark">Nombre:</span>{" "}
+                <span className="font-semibold text-redPalette-dark">Name and surname:</span>{" "}
                 <span className="text-gray-800 dark:text-gray-200">{user.name}</span>
             </p>
             <p>
@@ -21,11 +21,11 @@ const UserDataUI = () => {
                 <span className="text-gray-800 dark:text-gray-200">{user.email}</span>
             </p>
             <p>
-                <span className="font-semibold text-redPalette-dark">Dirección:</span>{" "}
+                <span className="font-semibold text-redPalette-dark">Address:</span>{" "}
                 <span className="text-gray-800 dark:text-gray-200">{user.address}</span>
             </p>
             <p>
-                <span className="font-semibold text-redPalette-dark">Teléfono:</span>{" "}
+                <span className="font-semibold text-redPalette-dark">Phone:</span>{" "}
                 <span className="text-gray-800 dark:text-gray-200">{user.phone}</span>
             </p>
             <p>

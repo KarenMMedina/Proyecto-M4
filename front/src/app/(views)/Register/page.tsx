@@ -16,7 +16,7 @@ export const Register = () => {
           />
         </div>
         <div className="w-[350px]">
-          <h2 className="text-3xl font-bold text-center text-black mb-6">Register</h2>
+          <h2 className="text-3xl font-bold text-center text-black mb-6">Register here, once registered you will be redirected to log in</h2>
           <RegisterFormUI />
         </div>
       </div>

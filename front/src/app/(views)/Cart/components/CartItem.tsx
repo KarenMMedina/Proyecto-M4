@@ -26,7 +26,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, name, image, price, onTrashClic
                 onClick={() => onTrashClick(id)}
                 className="ml-4 text-red-500"
             >
-                Eliminar
+                Remove
             </button>
         </div>
     );

@@ -39,8 +39,8 @@ export const ProductDetail: FC<IProduct> = ({ id, name, description, price, stoc
                 </div>
                 <br />
                 <div className="flex flex-col gap-2 text-sm text-redPalette-base">
-                    <p className="font-semibold text-redPalette-dark">Precio: ${price}</p>
-                    <p className="font-semibold text-redPalette-dark">Stock disponible: {stock}</p>
+                    <p className="font-semibold text-redPalette-dark">Price: ${price}</p>
+                    <p className="font-semibold text-redPalette-dark">Stock available: {stock}</p>
                 </div>
                 <div className="bg-redPalette-base 
                 text-black font-medium px-6 py-2 rounded-lg

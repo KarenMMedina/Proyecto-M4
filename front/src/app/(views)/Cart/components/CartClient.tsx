@@ -13,7 +13,7 @@ const CartClient = () => {
   const { total, cart, removeFromCart, checkOutLoader } = useCartContext();
 
   const onTrashClick = (id: number) => {
-    toast.success("Producto removido del carrito");
+    toast.success("Product removed from cart");
     removeFromCart(id);
   };
 
@@ -23,14 +23,14 @@ const CartClient = () => {
 
   if (checkOutLoader) {
     return (
-      <div className="flex justify-center items-center h-screen bg-cream">
+      <div className="flex justify-center items-center h-screen bg-redPalette-soft">
         <ClipLoader
-          color="#CD5656" // redPalette.base
+          color="#CD5656" 
           size={60}
           speedMultiplier={1.2}
         />
         <p className="mt-4 text-redPalette-dark text-lg font-semibold">
-          Generando tu orden, por favor aguarda...
+          Generating your order, please wait...
         </p>
       </div>
     );
@@ -38,12 +38,12 @@ const CartClient = () => {
 
   return (
     <div className="w-full p-6 bg-cream dark:bg-gray-900 rounded-xl shadow-lg">
-      <h1 className="text-3xl font-bold text-center text-black dark:text-white mb-8">Tu Carrito</h1>
+      <h1 className="text-3xl font-bold text-center text-black dark:text-white mb-8">Your Cart</h1>
 
       <div className="space-y-4 mb-8">
         {cart.length === 0 ? (
           <p className="text-center text-gray-600 dark:text-gray-400">
-            No hay productos en el carrito.
+           There are no products in the cart.
           </p>
         ) : (
           cart.map((item) => (
@@ -65,8 +65,8 @@ const CartClient = () => {
           <span>${subtotal}</span>
         </div>
         <div className="flex justify-between mb-2 text-gray-700 dark:text-gray-300">
-          <span className="font-semibold">Envío</span>
-          <span>Gratis</span>
+          <span className="font-semibold">Sending</span>
+          <span>Free</span>
         </div>
         <div className="flex justify-between text-xl font-bold mb-6 text-black dark:text-white">
           <span>Total</span>

@@ -15,13 +15,13 @@ export const Login = () => {
                         className="rounded-2xl object-cover mb-4"
                     />
                     <p className="text-sm text-black font-medium">
-                        ¿Quién eres? <br />
-                        Aún no te logueaste. <br />
-                        <span className="text-redPalette-base">¡Empieza ahora para poder comprar lo que quieras!</span>
+                        Who are you? <br />
+                        You are not logged in yet. <br />
+                        <span className="text-redPalette-base">Start now so you can buy whatever you want!</span>
                     </p>
                 </div>
                 <div className="w-[350px]">
-                    <h2 className="text-2xl font-bold text-center text-black mb-4">Login</h2>
+                    <h2 className="text-2xl font-bold text-center text-black mb-4">Log in here</h2>
                     <LoginFormUI />
                 </div>
             </div>

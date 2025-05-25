@@ -19,12 +19,12 @@ export const Cart = () => {
 
           <div className="mt-6 space-y-4 text-base text-gray-700 leading-relaxed">
             <p>
-              Revisá tu pedido antes de finalizar la compra. Si necesitás hacer cambios, podés eliminarlos desde aquí.
+              Review your order before completing your purchase. If you need to make changes, you can delete them here.
             </p>
             <p>
-              Si querés seguir comprando,{" "}
+              If you want to continue shopping,{" "}
               <Link href="/Home" className="text-black hover:underline font-semibold">
-                hacé click aquí
+                click here
               </Link>
               .
             </p>

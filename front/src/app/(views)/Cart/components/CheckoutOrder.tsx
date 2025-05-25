@@ -26,7 +26,7 @@ const CheckoutOrder = () => {
 
             const order = await postOrder(data, token || "");
 
-            toast.success(`Orden: #${order.id} creada existosamente`);
+            toast.success(`Order: #${order.id} created successfully.`);
 
             resetCart()
 
@@ -37,7 +37,7 @@ const CheckoutOrder = () => {
         } catch (e) {
             console.warn("Ocurrio un error al crear la orden", e)
 
-            toast.error("Ocurrio un eror al registrar la orden");
+            toast.error("An error occurred while registering the order.");
         }
     };
 
@@ -46,7 +46,7 @@ const CheckoutOrder = () => {
             <Button
                 disabled={total === 0}
                 onClick={onGenerateOrder}
-                textContent="Finalizar compra"
+                textContent="Complete purchase"
                 className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors"  />
         </>
     )

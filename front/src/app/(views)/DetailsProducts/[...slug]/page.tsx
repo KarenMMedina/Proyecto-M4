@@ -25,23 +25,23 @@ const PageDetailsProducts = async ({ params }: Props) => {
         {/* Texto informativo */}
         <div className="max-w-md text-gray-800">
           <h1 className="text-xl font-semibold mb-4">
-            Lee los detalles del producto y agrégalo al carrito para continuar con tu compra.
+            Read the product details and add it to your cart to continue with your purchase.
           </h1>
           <br />
-          <h2>Tu producto está identificado con el número: {id}</h2>
+          <h2>Your product is identified with the number: {id}</h2>
           <br />
           <p className="mb-2">
-            Si deseas seguir comprando,{" "}
+            If you want to continue shopping,{" "}
             <Link href="/Home" className="text-black hover:underline font-semibold">
-              hacé clic aquí
+              click here
             </Link>
             .
           </p>
           <br />
           <p>
-            Para finalizar tu pedido,{" "}
+            To complete your order,{" "}
             <Link href="/Cart" className="text-black hover:underline font-semibold">
-              ve a tu carrito
+              go to your cart
             </Link>
             .
           </p>

@@ -7,16 +7,16 @@ const LandingPage = () => {
 		<main className="min-h-screen bg-cream flex flex-col items-center justify-between px-4 py-8">
 			<section className="text-center mt-10">
 				<h1 className="text-5xl md:text-6xl font-bold text-redPalette-dark mb-4">
-					Bienvenidos a iClass
+					Welcome to iClass
 				</h1>
 				<p className="text-lg md:text-xl text-redPalette-base max-w-xl mx-auto">
-					Elegí estilo, potencia y exclusividad. Descubrí los mejores productos Apple a un click.
+					Choose style, power, and exclusivity. Discover the best Apple products with just a click.
 				</p>
 				<Link
 					href="/Home"
 					className="mt-8 inline-block bg-redPalette-base text-black font-semibold py-3 px-6 rounded-full hover:bg-redPalette-dark transition hover:text-white"
 				>
-					Entrar a la tienda
+					Enter the store
 				</Link>
 			</section>
 
@@ -32,10 +32,10 @@ const LandingPage = () => {
 					/>
 				</div>
 				<div className="w-full md:w-1/2 text-redPalette-dark text-left space-y-6">
-					<h2 className="text-3xl font-bold">Tu nuevo iPhone te está esperando</h2>
+					<h2 className="text-3xl font-bold">Your new iPhone is waiting for you</h2>
 					<p className="text-redPalette-soft text-lg">
-						Encontrá modelos recientes, calidad asegurada y atención personalizada.
-						En iClass, combinamos tecnología y diseño para darte la mejor experiencia.
+						Find recent models, guaranteed quality, and personalized service.
+						At iClass, we combine technology and design to give you the best experience.
 					</p>
 				</div>
 			</section>
@@ -43,16 +43,16 @@ const LandingPage = () => {
 			<section className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
 				{[
 					{
-						title: "Productos originales",
-						desc: "Garantía y autenticidad Apple en todos nuestros productos.",
+						title: "Original products",
+						desc: "Apple Guarantee and Authenticity on all our products.",
 					},
 					{
-						title: "Envíos rápidos",
-						desc: "A todo el país. Entregas seguras y en tiempo récord.",
+						title: "Fast shipping",
+						desc: "To the whole country. Safe deliveries in record time.",
 					},
 					{
-						title: "Atención personalizada",
-						desc: "Nuestro equipo te asesora en todo momento.",
+						title: "Personalized attention",
+						desc: "Our team will be happy to assist you at all times.",
 					},
 				].map((item, index) => (
 					<div
@@ -66,7 +66,7 @@ const LandingPage = () => {
 			</section>
 
 			<footer className="mb-4 text-sm text-redPalette-soft">
-				© {new Date().getFullYear()} iClass. Todos los derechos reservados.
+				© {new Date().getFullYear()} iClass. All rights reserved.
 			</footer>
 		</main>
 	);

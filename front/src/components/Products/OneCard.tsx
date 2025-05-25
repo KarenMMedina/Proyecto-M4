@@ -38,7 +38,7 @@ export const OneCard: React.FC<IProduct> = ({ name, price, image }) => {
         <div
           className="absolute inset-0 bg-redPalette-dark bg-opacity-70 flex items-center justify-center text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
-          Ver más
+          See more
         </div>
       </div>
 

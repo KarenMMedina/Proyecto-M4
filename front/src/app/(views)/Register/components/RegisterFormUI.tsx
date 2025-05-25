@@ -32,14 +32,14 @@ const RegisterFormUI = () => {
         console.log(values);
         try {
             await postRegister(values);
-            toast.success("Register Exitoso");
+            toast.success("Registration successful.");
 
             setTimeout(() => {
                 router.push("/Login");
             }, 3000)
         } catch (e: any) {
             console.warn("Error al registrar usuario", e?.message);
-            toast.error("Register no completado");
+            toast.error("Registration not completed.");
         }
     }
 
@@ -56,10 +56,10 @@ const RegisterFormUI = () => {
              flex flex-col gap-5
             ">
                     <div className="flex flex-col items-center">
-                        <label htmlFor="name" className="text-sm font-semibold text-redPalette-dark">Name: </label>
+                        <label htmlFor="name" className="text-sm font-semibold text-redPalette-dark">Name and surname: </label>
                         <input type="text" id="name" name="name" value={values.name}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="Tu nombre y apellido"
+                            placeholder="Your first and last name"
                             className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
                         <span className="text-red-700 text-xs mt-1">{errors.name && touched.name && errors.name}</span>
                     </div>
@@ -67,7 +67,7 @@ const RegisterFormUI = () => {
                         <label htmlFor="address" className="text-sm font-semibold text-redPalette-dark">Address: </label>
                         <input type="text" id="address" name="address" value={values.address}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="Tu dirección"
+                            placeholder="Your address"
                             className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
                         <span className="text-red-700 text-xs mt-1">{errors.address && touched.address && errors.address}</span>
                     </div>
@@ -83,7 +83,7 @@ const RegisterFormUI = () => {
                         <label htmlFor="email" className="text-sm font-semibold text-redPalette-dark">Email: </label>
                         <input type="text" id="email" name="email" value={values.email}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="ejemplo@gmail.com"
+                            placeholder="example@gmail.com"
                             className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
                         <span className="text-red-700 text-xs mt-1">{errors.email && touched.email && errors.email}</span>
                     </div>
@@ -95,7 +95,7 @@ const RegisterFormUI = () => {
                         <span className="text-red-700 text-xs mt-1">{errors.password && touched.password && errors.password}</span>
                     </div>
                     <div className="flex justify-center mt-4">
-                        <Button type="submit" textContent="Sign in"
+                        <Button type="submit" textContent="Register"
                             className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors" />
                     </div>
                 </Form>

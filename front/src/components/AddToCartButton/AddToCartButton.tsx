@@ -21,7 +21,7 @@ const AddToCartButton = ({ product }: { product: CartProduct }) => {
 
         setTimeout(() => {
             setLoanding(false);
-            toast.success("Producto añadido al carro")
+            toast.success("Product added to cart.")
         }, 1000)
     }
 
@@ -31,14 +31,14 @@ const AddToCartButton = ({ product }: { product: CartProduct }) => {
     if (!isAuth) {
         return (
             <Button
-                textContent="Añadir a carrito"
+                textContent="Add to cart"
                 onClick={onAddToCart}
             />
         );
     }
 
     if (productInCart && productQty >= 1) {
-        return <Button textContent="Máximo 1 unidad" disabled />;
+        return <Button textContent="Maximum 1 unit" disabled />;
     }
 
     if (loading) {
@@ -46,7 +46,7 @@ const AddToCartButton = ({ product }: { product: CartProduct }) => {
     }
 
     return (
-        <Button textContent="Añadir a carrito" onClick={onAddToCart} />
+        <Button textContent="Add to cart" onClick={onAddToCart} />
     );
 };
 

@@ -32,20 +32,19 @@ const LoginFormUI = () => {
 
             saveUserData({ user: res.user, token: res.token });
 
-            toast.success("Login Exitoso");
+            toast.success("Login successful.");
             setTimeout(() => {
                 router.push("/Home");
             }, 3000)
         } catch (e: any) {
             console.warn("Error al loguear usuario", e?.message);
-            toast.error("Login no completado");
+            toast.error("LLogin not completed.");
         }
     }
 
     return (
         <Formik
-            initialValues={{ email: "lucialopez10@example.com", password: "Hola123!" }}
-            // {{ email: '', password: '' }}
+            initialValues= {{ email: '', password: '' }}
             validationSchema={loginSchema}
             onSubmit={HandleOnSubmit}
         >
