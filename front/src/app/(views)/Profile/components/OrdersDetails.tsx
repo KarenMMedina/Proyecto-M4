@@ -23,14 +23,14 @@ const OrdersDetails = () => {
     }, [token]);
 
     return (
-        <div className="max-w-2xl mx-auto space-y-6">
+        <>
             {!orders?.length ? (
-                <div className="p-6 text-center text-gray-500 bg-cream border border-redPalette-dark rounded-xl shadow">
+                <div className="p-6 text-center text-gray-500 bg-cream rounded-2xl shadow-2xl col-span-full">
                     No tienes órdenes
                 </div>
             ) : (
                 orders?.map((order) => (
-                    <div key={order.id} className="bg-cream border border-redPalette-dark rounded-xl shadow-md p-6">
+                    <div key={order.id} className="w-full max-w-sm bg-cream rounded-2xl shadow-2xl p-6">
                         <p className="text-lg font-bold text-redPalette-dark mb-2"><strong>ID de orden:</strong> {order.id}</p>
                         <p className="font-semibold text-redPalette-dark"><strong>Fecha:</strong> {order.date}</p>
                         <p className="font-semibold text-redPalette-dark"><strong>Estado:</strong> {order.status}</p>
@@ -45,7 +45,7 @@ const OrdersDetails = () => {
                     </div>
                 ))
             )}
-        </div>
+        </>
     )
 }
 

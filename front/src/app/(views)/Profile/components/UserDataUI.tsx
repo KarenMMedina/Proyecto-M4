@@ -11,7 +11,7 @@ const UserDataUI = () => {
         return null;
     }
     return (
-        <div className="max-w-md mx-auto bg-cream border border-redPalette-dark rounded-xl shadow-md p-6 space-y-4">
+        <div className="max-w-md mx-auto bg-cream border rounded-2xl shadow-2xl p-6 space-y-4">
             <p>
                 <span className="font-semibold text-redPalette-dark">Nombre:</span>{" "}
                 <span className="text-gray-800 dark:text-gray-200">{user.name}</span>

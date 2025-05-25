@@ -12,9 +12,7 @@ export const ProductDetail: FC<IProduct> = ({ id, name, description, price, stoc
         <div className="
             w-full max-w-md 
             bg-cream 
-            border border-redPalette-dark 
-            rounded-xl 
-            shadow 
+            rounded-2xl shadow-2xl
             hover:shadow-md 
             transition-shadow 
             duration-300 

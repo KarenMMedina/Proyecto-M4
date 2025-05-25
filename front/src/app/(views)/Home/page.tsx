@@ -22,7 +22,7 @@ export default async function Home() {
       <p className="text-lg font-medium mb-10 leading-relaxed">
         Encontrá aquí los productos que buscás, al mejor precio, y recibilos en la puerta de casa en el menor tiempo posible.
       </p>
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full">
         <AllCards products={products} />
       </div>
     </div>

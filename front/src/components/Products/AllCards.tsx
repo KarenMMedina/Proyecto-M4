@@ -11,7 +11,7 @@ interface AllCardsProps {
 export const AllCards: React.FC <AllCardsProps> = ({products}) => {
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
             {products.map((product)  => {
                 const link = `/DetailsProducts/${product.id}/${product.name}`;
                 return (

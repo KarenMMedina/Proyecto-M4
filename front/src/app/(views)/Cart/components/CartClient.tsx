@@ -36,12 +36,8 @@ const CartClient = () => {
     );
   }
 
-  // if (checkOutLoader) {
-  //   return <p>Loading...</p>;
-  // }
-
   return (
-    <div className="max-w-4xl mx-auto p-6 mt-10 bg-cream dark:bg-gray-900 rounded-xl shadow-lg">
+    <div className="w-full p-6 bg-cream dark:bg-gray-900 rounded-xl shadow-lg">
       <h1 className="text-3xl font-bold text-center text-black dark:text-white mb-8">Tu Carrito</h1>
 
       <div className="space-y-4 mb-8">
