@@ -5,11 +5,10 @@ import { getProductById } from "@/services/products";
 
 interface Props {
   params: { slug: string[] };
-  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-const PageDetailsProducts = async ({ params, searchParams }: Props) => {
-  const [idStr, name] = (await params).slug;
+const PageDetailsProducts = async ({ params }: Props) => {
+  const [idStr] = params.slug;
   const id = Number(idStr);
 
   const product = await getProductById(Number(id));
@@ -18,14 +17,9 @@ const PageDetailsProducts = async ({ params, searchParams }: Props) => {
     redirect("/404");
   }
 
-  const code = (await searchParams)?.code;
-  const r = (await searchParams)?.r;
-
   return (
     <div>
       <h1>DetailsProducts: {id}</h1>
-      <span>code: {code}</span>
-      <span>r: {r}</span>
       <ProductDetail {...product} />
     </div>
   );
