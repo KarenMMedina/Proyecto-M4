@@ -1,5 +1,6 @@
 import AllCards from "@/components/Products/AllCards";
 import { getProducts } from "@/services/products";
+import Carousel from "./components/Carousel";
 
 const getData = async () => {
   const products = await getProducts();
@@ -19,6 +20,7 @@ export default async function Home() {
       <h1 className="text-4xl font-bold mb-4 drop-shadow-lg">
         ¡Bienvenido al Home!
       </h1>
+      <Carousel />
       <p className="text-lg font-medium mb-10 leading-relaxed">
         Encontrá aquí los productos que buscás, al mejor precio, y recibilos en la puerta de casa en el menor tiempo posible.
       </p>
