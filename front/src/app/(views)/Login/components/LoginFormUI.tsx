@@ -38,7 +38,7 @@ const LoginFormUI = () => {
             }, 3000)
         } catch (e: any) {
             console.warn("Error al loguear usuario", e?.message);
-            toast.error("LLogin not completed.");
+            toast.error("Login not completed.");
         }
     }
 

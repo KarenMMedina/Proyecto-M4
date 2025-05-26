@@ -19,7 +19,6 @@ export const OneCard: React.FC<IProduct> = ({ name, price, image }) => {
         overflow-hidden
       "
     >
-      {/* Imagen con overlay */}
       <div
         className="w-full flex justify-center items-center p-3 relative"
         style={{ height: 180, minHeight: 180 }}
@@ -33,16 +32,12 @@ export const OneCard: React.FC<IProduct> = ({ name, price, image }) => {
           style={{ minWidth: 120, minHeight: 120 }}
           priority
         />
-
-        {/* Overlay: aparece al hacer hover */}
         <div
           className="absolute inset-0 bg-redPalette-dark bg-opacity-70 flex items-center justify-center text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
           See more
         </div>
       </div>
-
-      {/* Info del producto */}
       <div className="px-3 pb-4">
         <h2 className="text-base font-semibold text-redPalette-dark mb-1 truncate">
           {name}

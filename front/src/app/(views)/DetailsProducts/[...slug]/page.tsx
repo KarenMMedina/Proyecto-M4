@@ -22,7 +22,6 @@ const PageDetailsProducts = async ({ params }: Props) => {
     <div className="min-h-screen bg-redPalette-soft bg-[url('/Fondos.png')] bg-cover bg-center bg-no-repeat bg-blend-overlay">
     <div className="max-w-7xl mx-auto px-6 py-10">
       <div className="flex items-start gap-10">
-        {/* Texto informativo */}
         <div className="max-w-md text-gray-800">
           <h1 className="text-xl font-semibold mb-4">
             Read the product details and add it to your cart to continue with your purchase.
@@ -46,8 +45,6 @@ const PageDetailsProducts = async ({ params }: Props) => {
             .
           </p>
         </div>
-
-        {/* Componente de detalle */}
         <div className="flex-1">
           <ProductDetail {...product} />
         </div>

@@ -5,26 +5,14 @@ export const navbarLinks: NavItemProps[] = [
 		name: "Home",
 		href: "/Home",
 	},
-	// {
-	// 	name: "Categorias",
-	// 	href: "/categorias",
-	// },
-	// {
-	// 	name: "Register",
-	// 	href: "/Register",
-	// },
-	// {
-	// 	name: "Login",
-	// 	href: "/Login",
-	// },
-	// {
-	// 	name: "Profile",
-	// 	href: "/Profile",
-	// },
-	// {
-	// 	name: "Cart",
-	// 	href: "/Cart",
-	// },
+	{
+		name: "About",
+		href: "/About",
+	},
+	{
+		name: "Contact",
+		href: "/Contact",
+	},
 ];
 
 export default navbarLinks;

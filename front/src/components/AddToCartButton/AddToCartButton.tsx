@@ -12,7 +12,7 @@ const AddToCartButton = ({ product }: { product: CartProduct }) => {
     const { isAuth } = useAuthContext();
     const onAddToCart = () => {
         if (!isAuth) {
-            toast.error("Debes iniciar sesión o registrarte para añadir productos");
+            toast.error("You must log in or register to add products.");
             return;
         }
 

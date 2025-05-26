@@ -31,10 +31,6 @@ const AuthNav = () => {
         );
     }
 
-    // if(isAuth === null){
-    //     return <p>Loading...</p>
-    // }
-
     return (
         <div className="flex gap-4 items-center">
             {isAuth ? (
