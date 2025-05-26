@@ -15,7 +15,6 @@ export const Footer = () => {
                     <h4 className="text-lg font-semibold mb-3">Useful links</h4>
                     <ul className="space-y-2">
                         <li><a href="/Home" className="hover:underline">Home</a></li>
-                        <li><a href="/products" className="hover:underline">Productos</a></li>
                         <li><a href="/About" className="hover:underline">About us</a></li>
                         <li><a href="/Contact" className="hover:underline">Contact</a></li>
                     </ul>
