@@ -34,9 +34,9 @@ const CheckoutOrder = () => {
                 router.push("/Profile")
             }, 3000);
 
-        } catch (e) {
-            console.warn("Ocurrio un error al crear la orden", e)
-
+        } catch (e: unknown) {
+            const errorMessage = e instanceof Error ? e.message : "Unknown error";
+            console.warn("Ocurrio un error al crear la orden", errorMessage)
             toast.error("An error occurred while registering the order.");
         }
     };
@@ -47,7 +47,7 @@ const CheckoutOrder = () => {
                 disabled={total === 0}
                 onClick={onGenerateOrder}
                 textContent="Complete purchase"
-                className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors"  />
+                className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors" />
         </>
     )
 }

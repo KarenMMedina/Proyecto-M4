@@ -13,8 +13,9 @@ const OrdersDetails = () => {
             try {
                 const res = await getUserOrders(token!);
                 setOrders(res);
-            } catch (e: any) {
-                console.warn("Error al obtener las ordenes:", e.message);
+            } catch (e: unknown) {
+                const errorMessage = e instanceof Error ? e.message : "Unknown error";
+                console.warn("Error al obtener las ordenes:", errorMessage);
             }
         };
         if (token) {

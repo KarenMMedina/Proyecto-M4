@@ -18,7 +18,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [token, setToken] = useState<string | null>(null);
 
     const saveUserData = (data: { user: IUser; token: string }) => {
-        console.log("data", data);
         setUser(data.user);
         setIsAuth(true);
         setToken(data.token);
@@ -37,21 +36,29 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
 
     useEffect(() => {
-        const storage = JSON.parse(localStorage?.getItem("user") || "{}");
-        console.log("user", storage);
-
-        if (storage === undefined || !Object.keys(storage)?.length) {
+        const raw = localStorage?.getItem("user");
+        if (!raw) {
             setIsAuth(false);
             return;
         }
+        try {
+            interface StoredUserData {
+                user: IUser;
+                token: string;
+            }
+            const storage: StoredUserData = JSON.parse(raw);
 
-        const storageType = storage as any;
-
-        setUser(storageType?.user);
-        setIsAuth(true);
-        setToken(storageType?.token);
+            if (storage.user && storage.token) {
+                setUser(storage.user);
+                setIsAuth(true);
+                setToken(storage.token);
+            } else {
+                setIsAuth(false);
+            }
+        } catch {
+            setIsAuth(false);
+        }
     }, []);
-
     return (
         <AuthContext.Provider
             value={{

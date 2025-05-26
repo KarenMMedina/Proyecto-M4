@@ -13,8 +13,6 @@ const getData = async () => {
 
 export default async function Home() {
   const { products } = await getData();
-  console.log("res", products);
-
   return (
     <div className="max-w-5xl mx-auto text-center text-black">
       <br />

@@ -29,7 +29,6 @@ const RegisterFormUI = () => {
     const router = useRouter();
 
     const HandleOnSubmit = async (values: FormData) => {
-        console.log(values);
         try {
             await postRegister(values);
             toast.success("Registration successful.");
@@ -37,8 +36,9 @@ const RegisterFormUI = () => {
             setTimeout(() => {
                 router.push("/Login");
             }, 3000)
-        } catch (e: any) {
-            console.warn("Error al registrar usuario", e?.message);
+        } catch (e: unknown) {
+            const errorMessage = e instanceof Error ? e.message : "Unknown error";
+            console.warn("Error al registrar usuario", errorMessage);
             toast.error("Registration not completed.");
         }
     }

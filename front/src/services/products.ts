@@ -5,9 +5,6 @@ const axiosApiBack = axios.create({
 	baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
-console.log("BASE URL", process.env.NEXT_PUBLIC_API_URL);
-
-
 export const getProducts = async (): Promise<IProduct[]> => {
 	try {
 		const response = await axiosApiBack.get("/products");

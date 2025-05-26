@@ -25,10 +25,8 @@ const LoginFormUI = () => {
     const { saveUserData } = useAuthContext();
 
     const HandleOnSubmit = async (values: IFormData) => {
-        console.log(values);
         try {
             const res = await postLogin(values);
-            console.log("res login");
 
             saveUserData({ user: res.user, token: res.token });
 
@@ -36,15 +34,16 @@ const LoginFormUI = () => {
             setTimeout(() => {
                 router.push("/Home");
             }, 3000)
-        } catch (e: any) {
-            console.warn("Error al loguear usuario", e?.message);
+        } catch (e: unknown) {
+            const errorMessage = e instanceof Error ? e.message : "Unknown error";
+            console.warn("Error al loguear usuario", errorMessage);
             toast.error("Login not completed.");
         }
     }
 
     return (
         <Formik
-            initialValues= {{ email: '', password: '' }}
+            initialValues={{ email: '', password: '' }}
             validationSchema={loginSchema}
             onSubmit={HandleOnSubmit}
         >
@@ -66,13 +65,13 @@ const LoginFormUI = () => {
                         <label htmlFor="password" className="text-sm font-semibold text-redPalette-dark">Password: </label>
                         <input type="password" id="password" name="password" value={values.password}
                             onChange={handleChange} onBlur={handleBlur}
-                            placeholder="**********" 
-                            className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm"  />
+                            placeholder="**********"
+                            className="border border-redPalette-dark rounded-lg px-4 py-2 text-sm" />
                         <span className="text-red-700 text-sm mt-1">{errors.password && touched.password && errors.password}</span>
                     </div>
                     <div className="flex justify-center mt-4">
                         <Button type="submit" textContent="Sign in"
-                        className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors" />
+                            className="bg-redPalette-base text-black font-medium px-6 py-2 rounded-lg hover:bg-redPalette-dark hover:text-white transition-colors" />
                     </div>
                 </Form>
             )}
