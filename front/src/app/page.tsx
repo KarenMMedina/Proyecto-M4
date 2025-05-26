@@ -19,7 +19,6 @@ const LandingPage = () => {
 					Enter the store
 				</Link>
 			</section>
-
 			<section className="flex flex-col md:flex-row items-center justify-center gap-10 my-16 max-w-6xl">
 				<div className="w-full md:w-1/2 animate-pulse bg-cream/60">
 					<Image
@@ -39,7 +38,6 @@ const LandingPage = () => {
 					</p>
 				</div>
 			</section>
-
 			<section className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
 				{[
 					{
@@ -64,7 +62,6 @@ const LandingPage = () => {
 					</div>
 				))}
 			</section>
-
 			<footer className="mb-4 text-sm text-redPalette-soft">
 				© {new Date().getFullYear()} iClass. All rights reserved.
 			</footer>
