@@ -3,7 +3,7 @@ import CartClient from "./components/CartClient";
 import Image from "next/image";
 import Link from "next/link";
 
-export const Cart = () => {
+export default function Cart() {
   return (
      <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex flex-row gap-12 items-start">
@@ -37,6 +37,3 @@ export const Cart = () => {
     </div>
   );
 }
-
-
-export default Cart;

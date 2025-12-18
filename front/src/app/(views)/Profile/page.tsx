@@ -2,7 +2,7 @@ import React from "react";
 import UserDataUI from "./components/UserDataUI";
 import OrdersDetails from "./components/OrdersDetails";
 
-export const Profile = () => {
+export default function Profile() {
     return (
         <div className="min-h-screen bg-redPallete-soft bg-[url('/Fondo-abajo.png')] bg-no-repeat bg-cover bg-center bg-blend-overlay px-6 py-10">
             <br />
@@ -18,5 +18,3 @@ export const Profile = () => {
         </div>
     );
 }
-
-export default Profile;

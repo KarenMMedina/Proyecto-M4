@@ -2,7 +2,7 @@ import React from "react";
 import LoginFormUI from "./components/LoginFormUI";
 import Image from "next/image";
 
-export const Login = () => {
+export default function Login() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-redPallete-soft">
             <div className="flex gap-12 items-center bg-cream p-10 rounded-2xl shadow-lg">
@@ -28,5 +28,3 @@ export const Login = () => {
         </div>
     )
 }
-
-export default Login;

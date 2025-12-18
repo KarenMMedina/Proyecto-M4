@@ -35,8 +35,9 @@ export const getUserOrders = async (token: string) => {
     });
 
     return res.data;
-  } catch (e: any) {
-    console.error("Error en la orden generada", e?.message);
+  } catch (e: unknown) {
+    const errorMessage = e instanceof Error ? e.message : "Unknown error";
+    console.error("Error en la orden generada", errorMessage);
     throw Error("ERROR_GET_ORDERS");
   }
 };

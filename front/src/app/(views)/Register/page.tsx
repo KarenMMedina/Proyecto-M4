@@ -2,7 +2,7 @@ import React from "react";
 import RegisterFormUI from "./components/RegisterFormUI";
 import Image from "next/image";
 
-export const Register = () => {
+export default function Register() {
     return (
          <div className="min-h-screen flex items-center justify-center bg-redPallete-soft px-8">
       <div className="flex gap-12 items-center bg-cream p-10 rounded-2xl shadow-lg mt-10">
@@ -23,5 +23,3 @@ export const Register = () => {
     </div>
     )
 }
-
-export default Register;

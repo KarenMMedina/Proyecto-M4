@@ -1,7 +1,7 @@
 "use client";
 import { useAuthContext } from "@/context/authContext";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 
 const usePrivate = () => {
@@ -12,8 +12,10 @@ const usePrivate = () => {
 		if(isAuth === null) {
 			return;
 		} 
-		!isAuth && router.push("/Home")
-	}, [isAuth]);
+		if (!isAuth) {
+			router.push("/Home");
+		}
+	}, [isAuth, router]);
 	return null;
 }
 

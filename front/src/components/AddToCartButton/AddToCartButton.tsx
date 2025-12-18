@@ -3,7 +3,7 @@ import { useCartContext } from "@/context/cartContext";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import Button from "../Button";
-import { CartProduct, IProduct } from "@/interfaces";
+import { CartProduct } from "@/interfaces";
 import { useAuthContext } from "@/context/authContext";
 
 const AddToCartButton = ({ product }: { product: CartProduct }) => {

@@ -9,7 +9,7 @@ const axiosApiBack = axios.create({
 
 export const postRegister = async (data: FormData) => {  
 	try{
-		const res = await axiosApiBack.post("/users/register", data);
+		await axiosApiBack.post("/users/register", data);
 		
 		return "SUCCESS_REGISTER";
 		

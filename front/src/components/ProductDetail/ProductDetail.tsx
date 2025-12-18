@@ -4,10 +4,6 @@ import Image from "next/image";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 export const ProductDetail: FC<IProduct> = ({ id, name, description, price, stock, image }) => {
-    const getLink = (name: string, id: IProduct["id"]) => {
-        return `/DetailsProducts/${id}/${name}`;
-    };
-
     return (
         <div className="
             w-full max-w-md 

@@ -21,7 +21,7 @@ export default async function Home() {
       </h1>
       <Carousel />
       <p className="text-lg font-medium mb-6 leading-relaxed">
-        Here <span className="text-redPallete-base font-semibold">iClass</span> you'll find the best selection of Apple products: iPhones, AirPods, accessories, and more—all 100% original.
+        Here <span className="text-redPallete-base font-semibold">iClass</span> you&apos;ll find the best selection of Apple products: iPhones, AirPods, accessories, and more—all 100% original.
         We ship nationwide through <span className="font-semibold">Andreani</span>, so your purchase arrives safely and quickly to your doorstep.
       </p>
        <AuthLogin />

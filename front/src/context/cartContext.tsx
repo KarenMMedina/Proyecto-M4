@@ -1,6 +1,6 @@
 "use client";
 
-import { CartProduct, IProduct } from "@/interfaces";
+import { CartProduct } from "@/interfaces";
 import { createContext, ReactNode, useContext, useEffect, useRef, useState } from "react";
 import { useAuthContext } from "./authContext";
 
@@ -20,7 +20,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<CartProduct[]>([]);
     const [total, setTotal] = useState<number>(0);   
-    const { user, isAuth } = useAuthContext();
+    const { user } = useAuthContext();
 
     const [checkOutLoader, setcheckOutLoader] = useState<boolean | undefined>();
     const hasMounted = useRef(false);  

@@ -49,7 +49,7 @@ const RegisterFormUI = () => {
             validationSchema={RegisterSchema}
             onSubmit={HandleOnSubmit}
         >
-            {({ isSubmitting, values, handleBlur, handleChange, handleSubmit, errors, touched, }) => (
+            {({ values, handleBlur, handleChange, handleSubmit, errors, touched }) => (
                 <Form onSubmit={handleSubmit} className="
              max-w-md w-full mx-auto mt-10 
              bg-cream p-8 rounded-2xl shadow-2xl 

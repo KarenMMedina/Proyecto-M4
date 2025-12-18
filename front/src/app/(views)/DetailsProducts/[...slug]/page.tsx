@@ -1,15 +1,15 @@
-import React from "react";
 import ProductDetail from "@/components/ProductDetail/ProductDetail";
 import { redirect } from "next/navigation";
 import { getProductById } from "@/services/products";
 import Link from "next/link";
 
-interface Props {
-  params: { slug: string[] };
-}
+type PageProps = {
+  params: Promise<{ slug: string[] }>;
+};
 
-const PageDetailsProducts = async ({ params }: Props) => {
-  const [idStr] = params.slug;
+const PageDetailsProducts = async ({ params }: PageProps) => {
+  const { slug } = await params;
+  const [idStr] = slug;
   const id = Number(idStr);
 
   const product = await getProductById(Number(id));

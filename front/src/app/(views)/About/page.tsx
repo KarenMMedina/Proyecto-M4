@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutPage = () => {
   return (
     <main className="min-h-screen bg-redPalette-soft text-black py-12 px-6 lg:px-24">
@@ -32,7 +30,7 @@ const AboutPage = () => {
           </h2>
           <p className="text-lg leading-relaxed text-justify">
             We work with{" "}
-            <span className="font-semibold text-redPalette-dark">Andreani</span> to offer you a reliable and efficient logistics service throughout the country. Whether you're in Buenos Aires, Córdoba, or the south of the country, we'll deliver your purchases to your doorstep with real-time tracking.
+            <span className="font-semibold text-redPalette-dark">Andreani</span> to offer you a reliable and efficient logistics service throughout the country. Whether you&apos;re in Buenos Aires, Córdoba, or the south of the country, we&apos;ll deliver your purchases to your doorstep with real-time tracking.
           </p>
         </section>
 
@@ -41,7 +39,7 @@ const AboutPage = () => {
             Our goal
           </h2>
           <p className="text-lg leading-relaxed text-justify">
-            We want you to experience the Apple experience with the peace of mind of shopping at a store that cares about every detail. At iClass, we don't just sell products; we offer trust, commitment, and a community passionate about quality technology.
+            We want you to experience the Apple experience with the peace of mind of shopping at a store that cares about every detail. At iClass, we don&apos;t just sell products; we offer trust, commitment, and a community passionate about quality technology.
           </p>
         </section>
       </div>

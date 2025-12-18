@@ -10,7 +10,7 @@ import { ClipLoader } from "react-spinners";
 
 const CartClient = () => {
   usePrivate();
-  const { total, cart, removeFromCart, checkOutLoader } = useCartContext();
+  const { cart, removeFromCart, checkOutLoader } = useCartContext();
 
   const onTrashClick = (id: number) => {
     toast.success("Product removed from cart");
