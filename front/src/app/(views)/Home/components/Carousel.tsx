@@ -29,7 +29,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className={styles.carouselContainer}>
+    <div className="w-full h-96 border rounded-2xl overflow-hidden relative">
       {images.map((src, index) => (
         <div
           key={index}

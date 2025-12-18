@@ -28,10 +28,6 @@ const UserDataUI = () => {
                 <span className="font-semibold text-redPalette-dark">Phone:</span>{" "}
                 <span className="text-gray-800 dark:text-gray-200">{user.phone}</span>
             </p>
-            <p>
-                <span className="font-semibold text-redPalette-dark">Rol:</span>{" "}
-                <span className="text-gray-800 dark:text-gray-200">{user.role}</span>
-            </p>
         </div>
     )
 }
